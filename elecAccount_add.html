@@ -23,27 +23,33 @@
         <li>메뉴</li>
         <li><a href="introduce.html">학생회 소개</a></li>
         <li><a href="elecAccount.html">전자 장부</a></li>
-        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="notice.html">공지사항</a></li>        
     </ul>
 </div>
 
 <div id="container">
 	<div id="content">
-        <div>
-            <h1>학생회장</h1>
-            <img src="" alt="학생회장 사진" style="width: auto; height: auto;">
-            <hr>
-        </div>
-        <div>
-            <h1>학생부회장</h1>
-            <img src="" alt="학생부회장 사진" style="width: auto; height: auto;">
-            <hr>
-        </div>
-        <div>
-            <h1>사무국장</h1>
-            <img src="" alt="사무국장 사진" style="width: auto; height: auto;">
-            <hr>
-        </div>
+        <form action="">
+            <label for="input_title">제목 : </label> 
+            <input type="text" id="input_title">
+            <br>     
+            <label for="input_content">내용 : </label>
+            <textarea name="" id="input_content" cols="30" rows="10"></textarea>
+            <br>
+            <label for="input_date">날짜 : </label>
+            <input type="date" id="input_date">
+            <br>
+            <label for="input_price">금액 : </label>
+            <input type="text" id="input_price">
+            <br>
+            <label for="input_image">영수증 사진 : </label>
+            <input type="file" id="input_image">
+            <br>
+            <input type="submit">
+
+
+        </form>
+
     </div>
 </div>
 
@@ -52,8 +58,10 @@
 	<ul>
         <li> <div id="con">로그인은 관리자만 가능합니다.</div></li>
         <li><a href='login.html'>로그인하러 가기</a></li> 
+        
 	</ul>
 </div>
+
 
 </div>
 </body>

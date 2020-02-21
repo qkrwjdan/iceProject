@@ -148,11 +148,22 @@ ul#nav > li > a:hover {
 }
 
 #sidebar > ul > li > a:hover {
-	background-color: #EDFEBA;
+	background-color: #f7901e;
 	color: #64615D;
 }
 
 #sidebar > ul > li > a {
+	display: block;
+	color: #64615D;
+	padding: 5px 3px 4px 17px;
+	text-decoration: none;
+	border-bottom: 1px solid #FFF;
+	font-weight: normal;
+	background: #FFF url('../images/circle.gif') no-repeat 5% 50%;
+}
+
+/* 추가한 것*/
+#sidebar > ul > li > #con{
 	display: block;
 	color: #64615D;
 	padding: 5px 3px 4px 17px;
@@ -402,4 +413,63 @@ margin: 0.7em 0 0 0;
 .div-center {
 	display: flex;
 	justify-content: center;
+}
+
+#main {
+	float: left;
+	width: 100%;
+	border-top: 1px solid lightgray;
+}
+/*추가한 것*/
+#mainBox {
+	margin-left: 250px;
+    margin-right: 52px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 9px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    float: left;
+    width: 60%;
+    height: 300px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+/*추가한 것*/
+#image {
+	float: left;
+    width: 200px;
+    margin-left: -790px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12px;
+    position: relative;
+    top: 7px;
+	height: 300px;
+}
+
+#page_controler{
+	text-align: center;
+}
+
+/* 추가한것 */
+#content #edit{
+	display: block;
+    text-align: right;
+    width: 800px;
+    height: 23px;
+}
+
+/* 추가한것 */
+#content #edit a{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#money{
+	text-align: right;
+	font-family: 'Nanum Gothic', sans-serif;
+	color: #666;
 }
