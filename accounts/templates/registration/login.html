@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block style%}
+<link rel="stylesheet" href="{% static 'accounts/login.css'%}">
+{% endblock %}
+
+{% block contents %}
+<div id="container">
+	<form class="" action="" method="post">
+        <input type="text" name="username" autofocus placeholder="ID" required id="id_username">
+        <br>
+        <input type="password" name="password" required placeholder="password" id="id_password">
+        <br>
+        <input type="submit" class="button" name="" value="Login">
+        <br>
+        {% csrf_token %}
+      </form>
+</div>
+{% endblock %}
