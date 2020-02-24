@@ -33,11 +33,19 @@
         {% block contents %}
         {% endblock %}
         <div id="sidebar">
+            {% if user.is_authenticated%}
+            <h1>{{user.get_username}}</h1>
+            <ul>
+                <li> <div id="con">환영합니다.</div></li>
+                <li><a href="{% url 'logout' %}">로그아웃</a></li> 
+            </ul>
+            {% else %}
             <h1>로그인</h1>
             <ul>
                 <li> <div id="con">로그인은 관리자만 가능합니다.</div></li>
                 <li><a href="{% url 'login' %}">로그인하러 가기</a></li> 
             </ul>
+            {% endif %}
         </div>
     </div>
 </body>
