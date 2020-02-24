@@ -11,7 +11,7 @@ class ElecAccountModel(models.Model):
     image = models.ImageField()
 
     def __str__(self):
-        return self.created_date + self.title
+        return str(self.created_date) + " - " + self.title
 
 class NoticeModel(models.Model):
     administrator = models.ForeignKey('auth.User',on_delete=models.CASCADE)
@@ -20,4 +20,4 @@ class NoticeModel(models.Model):
     text = models.TextField()
     
     def __str__(self):
-        return self.created_date + self.title
+        return str(self.created_date) + " - " + self.title
