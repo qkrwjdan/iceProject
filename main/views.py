@@ -74,5 +74,21 @@ def noticeDetail(request,pk):
         'data' : noticeData,
     })
 
+@login_required
+def noticeAdd(request):
+    if request.method == 'POST':
+        form = NoticeForm(request.POST,request.FILES)
+        if form.is_valid():
+            noticeData = form.save(commit = False)
+            noticeData.administrator = request.user
+            noticeData.created_date = timezone.now()
+            noticeData.save()
+            return redirect('noticeDetail',noticeData.pk)
+    else:
+        form = NoticeForm()
+        return render(request,'main/edit.html',{
+            'form' : form,
+        })
+
 def introduce(request):
     return render(request,'main/introduce.html')

@@ -13,7 +13,7 @@ urlpatterns = [
      path("introduce/",views.introduce,name="introduce"),
      path("notice/",views.notice,name="notice"),
      path('notice/<int:pk>', views.noticeDetail, name='noticeDetail'),
-     
+     path('notice/new/',views.noticeAdd,name='noticeAdd'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
