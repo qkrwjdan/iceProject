@@ -14,66 +14,14 @@
             <th style="width:90px;">작성일</th>
         </tr>
 
+        {% for data in datas %}
         <tr>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
+            <td style="text-align: center;">{{data.id}}</td>
+            <td style="text-align: center;"><a href="notice_detail.html">{{data.title}}</a></td>
+            <td style="text-align: center;">{{data.administrator}}</td>
+            <td style="text-align: center;">{{data.created_date}}</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">2</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">3</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">4</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">5</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">6</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">7</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">8</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">9</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">10</td>
-            <td style="text-align: center;"><a href="notice_detail.html">스타벅스 동국대점</a></td>
-            <td style="text-align: center;">관리자</td>
-            <td style="text-align: center;">20.02.21</td>
-        </tr>
+        {% endfor %}
         </table>
 
         <div id="page_controler">
@@ -81,9 +29,11 @@
             <a href="">2</a>
         </div>
 
+        {% if user.is_authenticated%}
         <div id="edit">
             <a href="elecAccount_add.html">내역 추가</a>
         </div>
+        {% endif %}
         
     </div>
 </div>
