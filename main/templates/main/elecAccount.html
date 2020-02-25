@@ -39,7 +39,7 @@
 
         {% if user.is_authenticated%}
         <div id="edit">
-            <a href="elecAccount_add.html">내역 추가</a>
+            <a href="{% url 'elecAccountAdd' %}">내역 추가</a>
         </div>
         {% endif %}
         

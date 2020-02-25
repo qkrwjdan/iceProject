@@ -431,7 +431,7 @@ margin: 0.7em 0 0 0;
 }
 
 /*추가한 것*/
-#image_box, #image {
+#image_box > #image {
 	float: left;
     width: 200px;
     margin-left: -790px;

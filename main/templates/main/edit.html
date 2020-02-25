@@ -2,9 +2,15 @@
 {% load static %}
 
 {% block contents %}
-
-{{form.as_p}}
-
-
+<div id="container">
+	<div id="content">
+        <form id = "form_box" action="" method="post" enctype="multipart/form-data">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" name="" value="Upload">
+        </form>
+    </div>
+</div>
+   
 {% endblock %}
 
