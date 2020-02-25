@@ -8,7 +8,7 @@ class ElecAccountModel(models.Model):
     created_date = models.DateTimeField(default = timezone.now)
     text = models.TextField()
     amount = models.IntegerField(default=0)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='photos/%Y/%m/%d', default='main/images/no_image.png')
 
     def __str__(self):
         return str(self.created_date) + " - " + self.title

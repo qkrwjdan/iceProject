@@ -114,7 +114,6 @@ ul#nav {
 ul#nav > li {
 	float: left;
 	padding: 0 17px 0 8px;
-	background: url('../images/bull_circle.gif') no-repeat 0 50%;
 }
 ul#nav > li > a {
 	text-decoration: none;
@@ -158,7 +157,6 @@ ul#nav > li > a:hover {
 	text-decoration: none;
 	border-bottom: 1px solid #FFF;
 	font-weight: normal;
-	background: #FFF url('../images/circle.gif') no-repeat 5% 50%;
 }
 
 /* 추가한 것*/
@@ -169,7 +167,6 @@ ul#nav > li > a:hover {
 	text-decoration: none;
 	border-bottom: 1px solid #FFF;
 	font-weight: normal;
-	background: #FFF url('../images/circle.gif') no-repeat 5% 50%;
 }
 
 /* 추가한 것 */
@@ -180,7 +177,6 @@ ul#nav > li > a:hover {
 	text-decoration: none;
 	border-bottom: 1px solid #FFF;
 	font-weight: normal;
-	background: #FFF url('../images/circle.gif') no-repeat 5% 50%;
 }
 
 #header > h1 {
@@ -199,7 +195,6 @@ ul#nav > li > a:hover {
 #footer > ul > li {
 	float: left;
 	padding: 6px 12px 6px 8px;
-	background: url('../images/circle.gif') no-repeat 0 50%;
 }
 #footer > ul > li > a {
 	color: #8D8D8D;
@@ -436,7 +431,7 @@ margin: 0.7em 0 0 0;
 }
 
 /*추가한 것*/
-#image {
+#image_box, #image {
 	float: left;
     width: 200px;
     margin-left: -790px;

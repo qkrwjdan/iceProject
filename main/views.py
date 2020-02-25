@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 
 
 from .forms import ElecAccountForm,NoticeForm
@@ -18,12 +19,59 @@ def elecAccount(request):
         "datas" : elecData,
     })
 
+def elecAccountDetail(request,pk):
+    elecData = get_object_or_404(ElecAccountModel,pk=pk)
+    return render(request,'main/elecAccount_detail.html',{
+        'data' : elecData,
+    })
+
+@login_required
+def elecAccountAdd(request):
+    if request.method == 'POST':
+        form = ElecAccountForm(request.POST,request.FILES)
+        if form.is_valid():
+            elecData = form.save(commit = False)
+            elecData.administrator = request.user
+            elecData.created_date = timezone.now()
+            elecData.save()
+            return redirect('elecAccountDetail',elecData.pk)
+    else:
+        form = ElecAccountForm()
+        return render(request,'main/edit.html',{
+            'form' : form,
+        })
+
+@login_required
+def elecAccountEdit(request,pk):
+    elecData = get_object_or_404(ElecAccountModel,pk = pk)
+
+    if request.method == 'POST':
+        form = ElecAccountForm(request.POST,request.FILES,instance = elecData)
+        if form.is_valid():
+            elecData = form.save(commit = False)
+            elecData.administrator = request.user
+            elecData.created_date = timezone.now()
+            elecData.save()
+            return redirect('elecAccountDetail',elecData.pk)
+    else:
+        form = ElecAccountForm()
+        return render(request,'main/edit.html',{
+            'form' : form,
+        })
+
+
 def notice(request):
     noticeData = NoticeModel.objects.all()
     noticeData = noticeData.order_by("created_date")
 
     return render(request,'main/notice.html',{
         "datas" : noticeData,
+    })
+
+def noticeDetail(request,pk):
+    noticeData = get_object_or_404(NoticeModel,pk=pk)
+    return render(request,'main/notice_detail.html',{
+        'data' : noticeData,
     })
 
 def introduce(request):

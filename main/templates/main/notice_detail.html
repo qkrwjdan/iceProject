@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+<div id="container">
+	<div id="content">
+        <div id="tt">{{data.title}}</div>
+        <hr>
+        <div id="mainBox">
+            <div> 작성자 : {{data.administrator}}</div>
+            <div> 내용 : {{data.text}}</div>
+            <div> 날짜 : {{data.created_date}}</div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div id="edit">
+            <a href="">편집</a>
+            <a href="">삭제</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
