@@ -14,7 +14,7 @@
 
         {% if user.is_authenticated %}
         <div id="edit">
-            <a href="">편집</a>
+            <a href="{% url 'noticeEdit' data.pk %}">편집</a>
             <a href="">삭제</a>
         </div>
         {% endif %}

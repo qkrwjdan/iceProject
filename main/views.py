@@ -44,7 +44,6 @@ def elecAccountAdd(request):
 @login_required
 def elecAccountEdit(request,pk):
     elecData = get_object_or_404(ElecAccountModel,pk = pk)
-    print(elecData)
 
     if request.method == 'POST':
         form = ElecAccountForm(request.POST,request.FILES,instance = elecData)
@@ -89,6 +88,24 @@ def noticeAdd(request):
         form = NoticeForm()
         return render(request,'main/edit.html',{
             'form' : form,
+        })
+
+@login_required
+def noticeEdit(request,pk):
+    noticeData = get_object_or_404(NoticeModel,pk=pk)
+
+    if request.method == 'POST':
+        form = NoticeForm(request.POST,request.FILES,instance=noticeData)
+        if form.is_valid():
+            noticeData = form.save(commit= False)
+            noticeData.administrator = request.user
+            noticeData.created_date = timezone.now()
+            noticeData.save()
+            return redirect('noticeDetail',noticeData.pk)
+    else:
+        form = NoticeForm(instance = noticeData)
+        return render(request,'main/edit.html',{
+            'form' : form
         })
 
 def introduce(request):

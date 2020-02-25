@@ -5,15 +5,16 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-     path("", views.index, name="index"),
-     path("elecAccount/",views.elecAccount,name="elecAccount"),
+     path('', views.index, name='index'),
+     path('elecAccount/',views.elecAccount,name='elecAccount'),
      path('elecAccount/<int:pk>', views.elecAccountDetail, name='elecAccountDetail'),
      path('elecAccount/edit/<int:pk>',views.elecAccountEdit,name='elecAccountEdit'),
      path('elecAccount/new/',views.elecAccountAdd,name='elecAccountAdd'),
-     path("introduce/",views.introduce,name="introduce"),
-     path("notice/",views.notice,name="notice"),
+     path('introduce/',views.introduce,name='introduce'),
+     path('notice/',views.notice,name='notice'),
      path('notice/<int:pk>', views.noticeDetail, name='noticeDetail'),
      path('notice/new/',views.noticeAdd,name='noticeAdd'),
+     path('notice/edit/<int:pk>',views.noticeEdit,name='noticeEdit'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
