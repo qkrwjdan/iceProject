@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+<script>
+    function conf(){
+        var res = confirm("정말 삭제하시겠습니까?");
+        return res;
+    }
+</script>
+{% endblock %}
+
 {% block contents %}
 <div id="container">
 	<div id="content">
@@ -15,7 +24,7 @@
         {% if user.is_authenticated %}
         <div id="edit">
             <a href="{% url 'noticeEdit' data.pk %}">편집</a>
-            <a href="">삭제</a>
+            <a href="{% url 'noticeDelete' data.pk %}" onclick="return conf()" >삭제</a>
         </div>
         {% endif %}
     </div>

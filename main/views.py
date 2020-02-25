@@ -108,5 +108,10 @@ def noticeEdit(request,pk):
             'form' : form
         })
 
+def noticeDelete(request,pk):
+    noticeData = get_object_or_404(NoticeModel,pk=pk)
+    noticeData.delete()
+    return redirect('notice')
+
 def introduce(request):
     return render(request,'main/introduce.html')
