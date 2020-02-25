@@ -44,6 +44,7 @@ def elecAccountAdd(request):
 @login_required
 def elecAccountEdit(request,pk):
     elecData = get_object_or_404(ElecAccountModel,pk = pk)
+    print(elecData)
 
     if request.method == 'POST':
         form = ElecAccountForm(request.POST,request.FILES,instance = elecData)
@@ -54,7 +55,7 @@ def elecAccountEdit(request,pk):
             elecData.save()
             return redirect('elecAccountDetail',elecData.pk)
     else:
-        form = ElecAccountForm()
+        form = ElecAccountForm(instance = elecData)
         return render(request,'main/edit.html',{
             'form' : form,
         })
