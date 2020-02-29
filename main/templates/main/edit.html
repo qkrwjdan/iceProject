@@ -14,7 +14,7 @@
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                    $('#image_section').attr('src', e.target.result);
+                    $('#image').attr('src', e.target.result);
                 }
 
               reader.readAsDataURL(input.files[0]);
@@ -26,12 +26,16 @@
 {% block contents %}
 <div id="container">
 	<div id="content">
-        <form id = "form_box" action="" method="post" enctype="multipart/form-data">
-            {{form.as_p}}
-            {% csrf_token %}
-            <input type="submit" class="btn btn-primary" name="" value="Upload">
-        </form>
-        <img id="image_section" src="#" alt="your image"/>
+        <div id="mainBox">
+            <form id = "form_box" action="" method="post" enctype="multipart/form-data">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" name="" value="Upload">
+            </form>
+        </div>
+        <div id="image_box">
+            <img id="image" src="#" alt="your image"/>
+        </div>
     </div>
 </div>
    

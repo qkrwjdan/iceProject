@@ -12,12 +12,18 @@ def index(request):
     return render(request,'main/index.html',)
 
 def elecAccount(request,pk):
+    money = 1000000000
+    expenditure = 0
+
     elecData = ElecAccountModel.objects.all()
+    for data in elecData:
+         expenditure += data.amount
+    
     numOfPage = range(1,int((len(elecData) / 10)) + 2)
     elecData = elecData.order_by("created_date")[(pk-1)*10 : pk*10]
 
     return render(request,'main/elecAccount.html',{
-        "datas" : elecData, "numOfPage" : numOfPage
+        "datas" : elecData, "numOfPage" : numOfPage, "money" : money, "expenditure" : expenditure, "balance" : money-expenditure,
     })
 
 def elecAccountDetail(request,pk):
