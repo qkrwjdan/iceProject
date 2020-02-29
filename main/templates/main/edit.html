@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#id_image").on('change', function(){
+                readURL(this);
+            });
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#image_section').attr('src', e.target.result);
+                }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+{% endblock %}
+
 {% block contents %}
 <div id="container">
 	<div id="content">
@@ -9,6 +31,7 @@
             {% csrf_token %}
             <input type="submit" class="btn btn-primary" name="" value="Upload">
         </form>
+        <img id="image_section" src="#" alt="your image"/>
     </div>
 </div>
    

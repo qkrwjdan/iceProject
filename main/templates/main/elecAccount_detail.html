@@ -17,7 +17,7 @@
         <hr>
         <div id="mainBox">
             <div> 내용 : {{data.text}}</div>
-            <div> 날짜 : {{data.created_date}}</div>
+            <div> 날짜 : {{data.created_date|date:"Y/m/d"}}</div>
             <div> 작성자 : {{data.administrator}}</div>
             <div> 금액 : {{data.amount}} 원</div>
         </div>

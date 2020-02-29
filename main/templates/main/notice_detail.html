@@ -17,8 +17,8 @@
         <hr>
         <div id="mainBox">
             <div> 작성자 : {{data.administrator}}</div>
+            <div> 날짜 : {{data.created_date|date:"Y/m/d"}}</div>
             <div> 내용 : {{data.text}}</div>
-            <div> 날짜 : {{data.created_date}}</div>
         </div>
 
         {% if user.is_authenticated %}
@@ -27,6 +27,7 @@
             <a href="{% url 'noticeDelete' data.pk %}" onclick="return conf()" >삭제</a>
         </div>
         {% endif %}
+        
     </div>
 </div>
 {% endblock %}
