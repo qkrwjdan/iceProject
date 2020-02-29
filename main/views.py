@@ -11,12 +11,13 @@ from .models import ElecAccountModel,NoticeModel
 def index(request):
     return render(request,'main/index.html',)
 
-def elecAccount(request):
+def elecAccount(request,pk):
     elecData = ElecAccountModel.objects.all()
-    elecData = elecData.order_by("created_date")
-    
+    numOfPage = range(1,int((len(elecData) / 10)) + 2)
+    elecData = elecData.order_by("created_date")[(pk-1)*10 : pk*10]
+
     return render(request,'main/elecAccount.html',{
-        "datas" : elecData, 
+        "datas" : elecData, "numOfPage" : numOfPage
     })
 
 def elecAccountDetail(request,pk):
@@ -65,12 +66,14 @@ def elecAccountDelete(request,pk):
     elecData.delete()
     return redirect('elecAccount')
 
-def notice(request):
+def notice(request,pk):
     noticeData = NoticeModel.objects.all()
-    noticeData = noticeData.order_by("created_date")
+    numOfPage = range(1,int((len(noticeData) / 10)) + 2)
+
+    noticeData = noticeData.order_by("created_date")[(pk-1)*10 : pk*10]
 
     return render(request,'main/notice.html',{
-        "datas" : noticeData,
+        "datas" : noticeData, "numOfPage" : numOfPage,
     })
 
 def noticeDetail(request,pk):

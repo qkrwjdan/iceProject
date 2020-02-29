@@ -23,7 +23,12 @@
         </div>
 
         <div id="image_box">
+            {% if data.image %}
             <img id="image" src="{{ data.image.url }}" alt="image drop">
+            {% else %}
+            <img id="image" src="{% static 'main/images/no_image.png' %}" alt="image drop">
+            {% endif %}
+
         </div>
 
         {% if user.is_authenticated %}

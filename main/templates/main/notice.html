@@ -16,7 +16,7 @@
 
         {% for data in datas %}
         <tr>
-            <td style="text-align: center;">{{data.id}}</td>
+            <td style="text-align: center;">{{forloop.counter}}</td>
             <td style="text-align: center;"><a href="{% url 'noticeDetail' data.id%}">{{data.title}}</a></td>
             <td style="text-align: center;">{{data.administrator}}</td>
             <td style="text-align: center;">{{data.created_date|date:"y/m/d"}}</td>
@@ -25,8 +25,9 @@
         </table>
 
         <div id="page_controler">
-            <a href="">1</a>
-            <a href="">2</a>
+            {% for i in numOfPage %}
+            <a href="{% url 'notice' i %}">{{i}}</a>
+            {% endfor %}
         </div>
 
         {% if user.is_authenticated%}
