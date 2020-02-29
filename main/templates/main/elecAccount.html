@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% load static%}
+{% load static %}
+{% load humanize %}
 
 {% block contents %}
 <div id="container">
@@ -24,9 +25,13 @@
             <td style="text-align: center;">{{data.id}}</td>
             <td style="text-align: center;"><a href="{% url 'elecAccountDetail' data.id %}">{{data.title}}</a></td>
             <td style="text-align: center;">{{data.administrator}}</td>
-            <td style="text-align: center;">{{data.created_date}}</td>
-            <td style="text-align: center;">{{data.amount}}</td>
+            <td style="text-align: center;">{{data.created_date|date:"Y/m/d"}}</td>
+            <td style="text-align: center;">{{data.amount | intcomma}}</td>
+            {% if data.image %}
+                <td style="text-align: center;">O</td>
+            {% else %}
             <td style="text-align: center;">-</td>
+            {% endif %}
         </tr>
 
         {% endfor %}

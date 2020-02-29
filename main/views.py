@@ -14,9 +14,9 @@ def index(request):
 def elecAccount(request):
     elecData = ElecAccountModel.objects.all()
     elecData = elecData.order_by("created_date")
-
+    
     return render(request,'main/elecAccount.html',{
-        "datas" : elecData,
+        "datas" : elecData, 
     })
 
 def elecAccountDetail(request,pk):
@@ -59,6 +59,11 @@ def elecAccountEdit(request,pk):
             'form' : form,
         })
 
+@login_required
+def elecAccountDelete(request,pk):
+    elecData = get_object_or_404(ElecAccountModel,pk=pk)
+    elecData.delete()
+    return redirect('elecAccount')
 
 def notice(request):
     noticeData = NoticeModel.objects.all()
@@ -108,6 +113,7 @@ def noticeEdit(request,pk):
             'form' : form
         })
 
+@login_required
 def noticeDelete(request,pk):
     noticeData = get_object_or_404(NoticeModel,pk=pk)
     noticeData.delete()

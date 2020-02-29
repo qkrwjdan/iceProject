@@ -37,6 +37,8 @@
             <h1>{{user.get_username}}</h1>
             <ul>
                 <li> <div id="con">환영합니다.</div></li>
+                <li><a href="{% url 'elecAccountAdd' %}">장부 추가 </a></li>
+                <li><a href="{% url 'noticeAdd' %}">공지사항 추가 </a></li>
                 <li><a href="{% url 'logout' %}">로그아웃</a></li> 
             </ul>
             {% else %}

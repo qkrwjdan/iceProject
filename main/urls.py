@@ -10,6 +10,7 @@ urlpatterns = [
      path('elecAccount/<int:pk>', views.elecAccountDetail, name='elecAccountDetail'),
      path('elecAccount/edit/<int:pk>',views.elecAccountEdit,name='elecAccountEdit'),
      path('elecAccount/new/',views.elecAccountAdd,name='elecAccountAdd'),
+     path('elecAccount/delete/<int:pk>',views.elecAccountDelete,name='elecAccountDelete'),
      path('introduce/',views.introduce,name='introduce'),
      path('notice/',views.notice,name='notice'),
      path('notice/<int:pk>', views.noticeDetail, name='noticeDetail'),
