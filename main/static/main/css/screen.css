@@ -97,6 +97,75 @@ ul#nav > li > a:hover {
     font-weight: normal;
 }
 
+#container {
+	float: left;
+	width: 100%;
+	border-top: 1px solid lightgray;
+}
+#content {
+	padding-left: 9px;
+	padding-right: 9px;
+	font-size: 0.9em;
+	line-height: 1.6;
+}
+#index_h1{
+font-size: medium;
+}
+
+#content_title{
+	display : none;
+	visibility: hidden;
+}
+
+.bbs-table {
+	width: 100%;
+	margin: 0.7em 0 0 0;
+}
+.bbs-table th {
+	color: #f7901e;
+	border-top: 1px solid #f7901e;
+	border-bottom: 1px solid #f7901e;
+}
+.bbs-table td {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid lightgray;
+	line-height: 1.45;
+}
+.bbs-table td a {
+	color: #555;
+	text-decoration: none;
+}
+.bbs-table td a:hover {
+	color:#555;
+	text-decoration: underline;
+}
+#page_controler {
+	text-align: center;
+	
+}
+#page_controler > a{
+	text-decoration: none;
+	color : #f7901e;
+}
+#page_controler > a:hover {
+    text-decoration: none;
+	background: none;
+	color : #f7901e;
+}
+#edit{
+	text-align: right;
+}
+#edit > a{
+	text-decoration: none;
+	color : #f7901e;
+
+}
+#edit > a:hover{
+	text-align: right;
+	background: none;
+	color : #f7901e;
+}
 
 
 @media(min-width : 768px){
@@ -565,6 +634,16 @@ ul#nav > li > a:hover {
 	#money{
 		text-align: right;
 		font-family: 'Nanum Gothic', sans-serif;
+		color: #666;
+	}
+
+	#content_title{
+		display : inline;
+		visibility: visible;
+		margin: 0;
+		padding-top: 10px;
+		font-family: 'Nanum Gothic', sans-serif;
+		font-size: 20px;
 		color: #666;
 	}
 }

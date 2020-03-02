@@ -19,8 +19,8 @@ def elecAccount(request,pk):
     for data in elecData:
          expenditure += data.amount
     
-    numOfPage = range(1,int((len(elecData) / 10)) + 2)
-    elecData = elecData.order_by("created_date")[(pk-1)*10 : pk*10]
+    numOfPage = range(1,int((len(elecData) / 7)) + 2)
+    elecData = elecData.order_by("created_date")[(pk-1)*7 : pk*7]
 
     return render(request,'main/elecAccount.html',{
         "datas" : elecData, "numOfPage" : numOfPage, "money" : money, "expenditure" : expenditure, "balance" : money-expenditure,

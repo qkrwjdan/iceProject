@@ -5,9 +5,11 @@
 {% block contents %}
 <div id="container">
 	<div id="content">
-        <div id="tt"> 전자 장부</div>
+        <div id="content_title"> 전자 장부</div>
         <div id="money">
-            초기 잔고 : {{money | intcomma}} / 지출 내역 : {{expenditure | intcomma}}/ 현재 잔고 : {{balance | intcomma}}
+            <div class="management">초기 잔고 : {{money | intcomma}}</div>
+            <div class="management">지출 내역 : {{expenditure | intcomma}}</div> 
+            <div class="management">현재 잔고 : {{balance | intcomma}}</div>
         </div>
 
         <table class="bbs-table">
