@@ -53,13 +53,11 @@ ul#nav > li > a:hover {
 #sidebar {
     float: left;
     width: 100%;
-    margin-bottom: 0px;
+    margin-bottom: 2px;
     border: 0px;
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: 12px;
-    position: fixed;
-    bottom : 6%;
-
+	font-size: 12px;
+	margin-top : 2px;
 }
 #sidebar > h1 {
     margin: 0;
@@ -167,6 +165,20 @@ font-size: medium;
 	color : #f7901e;
 }
 
+#titleInput{
+	border : 1px dashed black;
+	width : 270px;
+}
+#imageInput{
+	border : 1px dashed black;
+}
+#textInput{
+	border : 1px dashed black;
+}
+#image_box > #image{
+	width : 100%;
+}
+
 
 @media(min-width : 768px){
 	html, body {
@@ -232,11 +244,11 @@ font-size: medium;
 	}
 	#container {
 		float: left;
-		width: 100%;
+		width: 80%;
 		border-top: 1px solid lightgray;
 	}
 	#content {
-		margin-left: 180px;
+		margin-left : 10px;
 		padding-left: 9px;
 		padding-right: 9px;
 		font-size: 0.9em;
@@ -244,8 +256,7 @@ font-size: medium;
 	}
 	#sidebar {
 		float: left;
-		width: 173px;
-		margin-left: -1000px;
+		width: 19%;
 		margin-bottom: 20px;
 		border: 1px solid lightgray;
 		font-family: 'Nanum Gothic', sans-serif;
@@ -584,7 +595,7 @@ font-size: medium;
 		border-top: 1px solid lightgray;
 	}
 	/*추가한 것*/
-	#mainBox {
+	#notice_mainBox,#elec_mainBox {
 		margin-left: 250px;
 		margin-right: 52px;
 		padding-left: 9px;
@@ -598,6 +609,14 @@ font-size: medium;
 		margin-bottom: 20px;
 		text-align: left;
 	}
+	#elec_mainBox{
+		margin-left : 250px;
+	}
+	#notice_mainBox{
+		margin-left : 0px;
+	}
+
+
 
 	/*추가한 것*/
 	#image_box > #image {
@@ -645,5 +664,8 @@ font-size: medium;
 		font-family: 'Nanum Gothic', sans-serif;
 		font-size: 20px;
 		color: #666;
+	}
+	.mainBox_content{
+
 	}
 }

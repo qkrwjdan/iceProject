@@ -5,7 +5,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript">
         $(function() {
-            $("#id_image").on('change', function(){
+            $("#imageInput").on('change', function(){
                 readURL(this);
             });
         });
@@ -26,7 +26,7 @@
 {% block contents %}
 <div id="container">
 	<div id="content">
-        <div id="mainBox">
+        <div id="elec_mainBox">
             <form id = "form_box" action="" method="post" enctype="multipart/form-data">
                 {{form.as_p}}
                 {% csrf_token %}

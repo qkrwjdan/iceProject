@@ -44,7 +44,7 @@ def elecAccountAdd(request):
             return redirect('elecAccountDetail',elecData.pk)
     else:
         form = ElecAccountForm()
-        return render(request,'main/edit.html',{
+        return render(request,'main/elecEdit.html',{
             'form' : form,
         })
 
@@ -62,7 +62,7 @@ def elecAccountEdit(request,pk):
             return redirect('elecAccountDetail',elecData.pk)
     else:
         form = ElecAccountForm(instance = elecData)
-        return render(request,'main/edit.html',{
+        return render(request,'main/elecEdit.html',{
             'form' : form,
         })
 
@@ -100,7 +100,7 @@ def noticeAdd(request):
             return redirect('noticeDetail',noticeData.pk)
     else:
         form = NoticeForm()
-        return render(request,'main/edit.html',{
+        return render(request,'main/noticeEdit.html',{
             'form' : form,
         })
 
@@ -118,7 +118,7 @@ def noticeEdit(request,pk):
             return redirect('noticeDetail',noticeData.pk)
     else:
         form = NoticeForm(instance = noticeData)
-        return render(request,'main/edit.html',{
+        return render(request,'main/noticeEdit.html',{
             'form' : form
         })
 
