@@ -19,8 +19,8 @@ def elecAccount(request,pk):
     for data in elecData:
          expenditure += data.amount
     
-    numOfPage = range(1,int((len(elecData) / 7)) + 2)
-    elecData = elecData.order_by("created_date")[(pk-1)*7 : pk*7]
+    numOfPage = range(1,int((len(elecData) / 10)) + 2)
+    elecData = elecData.order_by("-created_date")[(pk-1)*10 : pk*10]
 
     return render(request,'main/elecAccount.html',{
         "datas" : elecData, "numOfPage" : numOfPage, "money" : money, "expenditure" : expenditure, "balance" : money-expenditure,
@@ -76,7 +76,7 @@ def notice(request,pk):
     noticeData = NoticeModel.objects.all()
     numOfPage = range(1,int((len(noticeData) / 10)) + 2)
 
-    noticeData = noticeData.order_by("created_date")[(pk-1)*10 : pk*10]
+    noticeData = noticeData.order_by("-created_date")[(pk-1)*10 : pk*10]
 
     return render(request,'main/notice.html',{
         "datas" : noticeData, "numOfPage" : numOfPage,
