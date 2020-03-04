@@ -25,7 +25,7 @@ SECRET_KEY = 'ms$dm8-4(j*)n3r0r+1f!1b3#atmxm&8h1k=kp-hbd@gff541*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
