@@ -20,6 +20,14 @@
             <div class = "mainBox_content"> 날짜 : {{data.created_date|date:"Y/m/d"}}</div>
             <div class = "mainBox_content"> 내용 : {{data.text}}</div>
         </div>
+        
+        <div id="image_box">
+            {% if data.image %}
+            <img id="image" src="{{ data.image.url }}" alt="image drop">
+            {% else %}
+            <img id="image" src="{% static 'main/images/no_image.png' %}" alt="image drop">
+            {% endif %}
+        </div>
 
         {% if user.is_authenticated %}
         <div id="edit">

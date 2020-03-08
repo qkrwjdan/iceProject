@@ -21,16 +21,18 @@ class ElecAccountForm(forms.ModelForm):
 class NoticeForm(forms.ModelForm):
     class Meta:
         model = NoticeModel
-        fields = ['title','administrator','text']
+        fields = ['title','administrator','text','image']
         widgets = {
             'title' : forms.TextInput(attrs = {'id' : 'titleInput'}),
             'text' : forms.Textarea(attrs = {'id' : 'textInput' , 'placeholder' : '내용을 입력하세요'}),
+            'image' : forms.FileInput(attrs = {'id' : 'imageInput'}),
         }
 
         labels = {
             'title' : '제목',
             'administrator' : '작성자',
-            'text' : '내용',
+            'text' : '',
+            'image': '사진',
         }
 
         

@@ -20,6 +20,7 @@ class NoticeModel(models.Model):
     title = models.CharField(max_length=50)
     created_date = models.DateField(auto_now=True)
     text = models.TextField()
+    image = models.ImageField(upload_to='photos/%Y/%m/%d', null=True, blank=True)
     
     def __str__(self):
         return str(self.created_date) + " - " + self.title

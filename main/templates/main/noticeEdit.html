@@ -2,17 +2,39 @@
 {% load static %}
 
 {% block style %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#imageInput").on('change', function(){
+                readURL(this);
+            });
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#image').attr('src', e.target.result);
+                }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block contents %}
 <div id="container">
 	<div id="content">
-        <div id="mainBox">
+        <div id="notice_mainBox">
             <form id = "form_box" action="" method="post" enctype="multipart/form-data">
                 {{form.as_p}}
                 {% csrf_token %}
                 <input type="submit" class="btn btn-primary" name="" value="Upload">
             </form>
+        </div>
+        <div id="image_box">
+            <img id="image" src="#" alt="your image"/>
         </div>
     </div>
 </div>
